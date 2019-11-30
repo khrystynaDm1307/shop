@@ -1,0 +1,23 @@
+.box{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://storeinteriors.ru/wp-content/uploads/salon-i-love-ugly-02.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.nav-link{
+    color: #414141;
+}
+.active{
+    background-color: #141414!important;
+    color: rgb(223, 223, 223)!important;
+}
+.container-fluid{
+    background-color: #e6e8eb;
+    padding-top: 50px;
+    min-height: 600px;
+}
+.row{
+    flex-wrap: nowrap;
+}

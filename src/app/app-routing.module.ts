@@ -5,6 +5,10 @@ import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MainComponent } from './pages/main/main.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { AdminCommentsComponent } from './admin/admin-comments/admin-comments.component';
+import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 
 
 const routes: Routes = [
@@ -14,14 +18,13 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'main', component: MainComponent},
+  {path: 'admin', component: AdminComponent, children: [
+    {path: '', redirectTo: 'products', pathMatch: 'full'},
+    {path: 'products', component: AdminProductComponent},
+    {path: 'comments', component: AdminCommentsComponent},
+    {path: 'users', component: AdminUsersComponent},
+  ]},
   // {path: 'pizza/:id', component: ProductDetailsComponent},
-  // {path: 'admin', component: AdminComponent, children: [
-  //   {path: '', redirectTo: 'category', pathMatch: 'full'},
-  //   {path: 'category', component: AdminCategoryComponent},
-  //   {path: 'products', component: AdminProductsComponent},
-  //   {path: 'discount', component: AdminDiscountComponent},
-  //   {path: 'orders', component: AdminOrdersComponent}
-  // ]},
   {path: '**', redirectTo: '/main'}
 ];
 

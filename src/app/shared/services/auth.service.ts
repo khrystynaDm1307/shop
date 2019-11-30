@@ -37,7 +37,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['profile']);
+          this.router.navigate(['admin']);
         });
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -55,24 +55,6 @@ export class AuthService {
         this.SetUserData(result.user);
       }).catch((error) => {
         window.alert(error.message)
-      })
-  }
-
-  // Send email verfificaiton when new user sign up
-  SendVerificationMail() {
-    return this.afAuth.auth.currentUser.sendEmailVerification()
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      })
-  }
-
-  // Reset Forggot password
-  ForgotPassword(passwordResetEmail) {
-    return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      }).catch((error) => {
-        window.alert(error)
       })
   }
 
@@ -96,7 +78,7 @@ export class AuthService {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['profile']);
+          this.router.navigate(['admin']);
         })
         this.SetUserData(result.user);
       }).catch((error) => {
@@ -125,8 +107,27 @@ export class AuthService {
   SignOut() {
     return this.afAuth.auth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['sign-in']);
+      this.router.navigate(['main']);
     })
+  }
+
+  
+  // Send email verfificaiton when new user sign up
+  SendVerificationMail() {
+    return this.afAuth.auth.currentUser.sendEmailVerification()
+      .then(() => {
+        this.router.navigate(['verify-email-address']);
+      })
+  }
+
+  // Reset Forggot password
+  ForgotPassword(passwordResetEmail) {
+    return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
+      .then(() => {
+        window.alert('Password reset email sent, check your inbox.');
+      }).catch((error) => {
+        window.alert(error)
+      })
   }
 
 }
