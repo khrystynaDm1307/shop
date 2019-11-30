@@ -1,34 +1,13 @@
 <div class="box">
-<div class="container">
-    <div class="card mt-2" style="width: 18rem;">
-        <img src="https://thestoicstore.com/wp-content/uploads/2018/03/sustine-et-abstine-black-tshirt-hanging.jpg"
-            class="card-img-top" alt="...">
-        <div class="card-body">
-            <h4 class="card-title">title</h4>
-            <p class="card-text">text</p>
-            <span class="card-text">price грн</span>
-            <a class="btn btn-primary">more details</a>
+    <div class="container">
+        <div *ngFor="let prod of products" class="card mt-2" style="width: 18rem;">
+            <img [src]="prod.image" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="card-title">{{prod.name}}</h4>
+                <p class="card-text">{{prod.description}}</p>
+                <span class="card-text">{{prod.price}} грн</span>
+                <a [routerLink]="[ '/pizza', prod.id ]" class="btn btn-warning">more details</a>
+            </div>
         </div>
     </div>
-    <div class="card mt-2" style="width: 18rem;">
-        <img src="https://thestoicstore.com/wp-content/uploads/2018/03/sustine-et-abstine-black-tshirt-hanging.jpg"
-            class="card-img-top" alt="...">
-        <div class="card-body">
-            <h4 class="card-title">title</h4>
-            <p class="card-text">text</p>
-            <span class="card-text">price грн</span>
-            <a class="btn btn-primary">more details</a>
-        </div>
-    </div>
-    <div class="card mt-2" style="width: 18rem;">
-        <img src="https://thestoicstore.com/wp-content/uploads/2018/03/sustine-et-abstine-black-tshirt-hanging.jpg"
-            class="card-img-top" alt="...">
-        <div class="card-body">
-            <h4 class="card-title">title</h4>
-            <p class="card-text">text</p>
-            <span class="card-text">price грн</span>
-            <a class="btn btn-primary">more details</a>
-        </div>
-    </div>
-</div>
 </div>
