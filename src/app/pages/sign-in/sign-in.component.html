@@ -1,1 +1,33 @@
-<p>sign-in works!</p>
+<div class="box">
+    <div class="form-box">
+        <div>
+            <div class="authBlock">
+                <h3>Sign In</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" #userName required>
+                </div>
+                <div class="formGroup">
+                    <input type="password" class="form-control" placeholder="Password" #userPassword required>
+                </div>
+                <!-- Calling SignIn Api from AuthService -->
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary" value="Log in"
+                        (click)="authService.SignIn(userName.value, userPassword.value)">
+                </div>
+                <div class="form-group">
+                    <span class="or"><span class="orInner">Or</span></span>
+                </div>
+                <div class="form-group">
+                    <div class="icon fb" (click)="authService.FacebookAuth()"></div>
+                    <div class="icon google"  (click)="authService.GoogleAuth()"></div>
+                </div>          
+                <!-- <div class="forgotPassword">
+                            <span routerLink="/forgot-password">Forgot Password?</span>
+                        </div> -->
+            </div>
+            <div class="redirectToLogin">
+                <span>Don't have an account?  <span class="redirect" routerLink="/sign-up">Sign Up</span></span>
+            </div>
+        </div>
+    </div>
+</div>

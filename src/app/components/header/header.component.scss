@@ -1,3 +1,16 @@
 .nav-link{
     font-size: 20px;
 }
+.bg-dark{
+    background-color: rgba(0, 0, 0, 0.678)!important;
+}
+nav{
+    z-index: 1;
+    height: 80px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.navbar-brand{
+    font-size: 30px!important;
+    margin-right: 50px;
+    margin-left: 30px;
+}

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-primary{
+    background-color: transparent;
+    width: 200px;
+    border: 2px solid black;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+.btn-primary:hover{
+    background-color: black;
+    color: rgb(228, 228, 228);
+    border-color: black;
+}
