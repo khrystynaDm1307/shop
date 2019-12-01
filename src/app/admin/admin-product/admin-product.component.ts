@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { map, finalize } from 'rxjs/operators';
@@ -13,6 +12,7 @@ import { Product } from 'src/app/shared/class/product.class';
   styleUrls: ['./admin-product.component.scss']
 })
 export class AdminProductComponent implements OnInit {
+  productCategories: Array<string> = ["Man", "Woman", "Chilldren"];
   products: Array<IProduct> = [];
   productCategory: string;
   productName: string;
@@ -70,7 +70,6 @@ export class AdminProductComponent implements OnInit {
     this.productImage = null;
   }
 
-
   public upload(event): void {
     const id = Math.random().toString(36).substring(2)
     this.ref = this.prStorage.ref(`images/${id}`)
@@ -84,8 +83,6 @@ export class AdminProductComponent implements OnInit {
       })
     ).subscribe();
   }
-
-
 
   public deleteProduct(obj: IProduct): void {
     this.productsService.deleteProduct(obj.id).subscribe(
@@ -102,11 +99,15 @@ export class AdminProductComponent implements OnInit {
     this.productPrice = obj.price;
     this.productImage = obj.image;
     this.editStatus = true;
+    this.editId=obj.id
   }
 
   public saveEditProduct(): void {
     // tslint:disable-next-line: max-line-length
     const editProd = new Product(this.editId, this.productCategory, this.productName, this.productDescription, this.productPrice, this.productImage, 0, []);
+    console.log(editProd);
+    console.log(this.editId);
+    
     this.productsService.editProduct(editProd).subscribe(
       () => {
         this.getProdData();

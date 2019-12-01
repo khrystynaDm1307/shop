@@ -2,11 +2,9 @@
     <div class="form-group">
       <label for="">Category name</label>
       <select class="form-control" [(ngModel)]="productCategory" name="productCategory">
-        <option value="" disabled>Choose category</option>
-        <option >Women</option>
-        <option >Man</option>
-        <option >Children</option>
-      </select>
+          <option value="" disabled>Choose category</option>
+          <option *ngFor="let category of productCategories" [ngValue]="category">{{category}}</option>
+        </select>
     </div>
     <div class="form-group">
       <input [(ngModel)]="productName" name="productName" type="text" class="form-control" placeholder="name here...">
@@ -36,11 +34,11 @@
         </div>
         <br>
         <div class="btn-group" role="group" *ngIf="uploadState | async; let state">
-          <button type="button" class="btn btn-primary" (click)="task.pause()"
+          <button type="button" class="btn btn-warning" (click)="task.pause()"
             [disabled]="state === 'paused'">Pause</button>
-          <button type="button" class="btn btn-primary" (click)="task.cancel()"
+          <button type="button" class="btn btn-warning" (click)="task.cancel()"
             [disabled]="!(state === 'paused' || state === 'running')">Cancel</button>
-          <button type="button" class="btn btn-primary" (click)="task.resume()"
+          <button type="button" class="btn btn-warning" (click)="task.resume()"
             [disabled]="state === 'running'">Resume</button>
         </div>
       </div>

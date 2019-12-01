@@ -9,6 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
 import { AdminCommentsComponent } from './admin/admin-comments/admin-comments.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
     {path: 'comments', component: AdminCommentsComponent},
     {path: 'users', component: AdminUsersComponent},
   ]},
-  // {path: 'pizza/:id', component: ProductDetailsComponent},
+  {path: 'products/:id', component: ProductDetailsComponent},
   {path: '**', redirectTo: '/main'}
 ];
 

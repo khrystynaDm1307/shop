@@ -1,0 +1,19 @@
+<div class="container">
+        <div class="details" >
+          <div class="forImg">
+              <img [src]="view?.image" class="card-img-top" alt="...">
+          </div>
+          
+          <div class="body">
+            <h1 class="card-title">{{view?.name}}</h1>
+            <div class="desc">
+                <p class="card-text">{{view?.description}}</p>
+            </div>
+           
+            <h2 class="card-text">{{view?.price}} грн</h2>
+            <!-- <a class="btn btn-primary">back</a> -->
+            <!-- <a [routerLink]="[ '/pizza']" class="btn btn-primary">back</a> -->
+            <a (click)="goBack()" class="btn btn-danger">Back</a>
+          </div>
+        </div>
+      </div>

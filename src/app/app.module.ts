@@ -22,6 +22,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { environment } from '../environments/environment';
     AdminComponent,
     AdminProductComponent,
     AdminCommentsComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
