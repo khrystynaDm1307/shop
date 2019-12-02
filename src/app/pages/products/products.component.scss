@@ -11,6 +11,7 @@
   background-color: rgba(248, 248, 248, 0.712);
   z-index: 3;
   color:black;
+ align-items: center;
 }
 .card-text{
  height: 50px;
@@ -33,7 +34,19 @@ span{
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
   flex-direction: column;
+
 }
 .btn-primary:hover{
   color: wheat
+}
+img{
+  height: 300px;
+}
+.card-title,.card-text{
+  height: 50px;
+  overflow: hidden;
+}
+.btn-primary{
+  display: block;
+  color:black;
 }

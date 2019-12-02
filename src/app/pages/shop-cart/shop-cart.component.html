@@ -1,0 +1,48 @@
+<div class="box">
+    <!-- when bag is empty -->
+<div class="card text-center" *ngIf="!buyProduct.length">
+        <div class="card-header">Ooops...</div>
+        <div class="card-body">
+            <h5 class="card-title">Your shopping bag is empty :(</h5>
+            <a routerLink="/products" class="btn btn-warning">Buy something!</a>
+        </div>
+    </div>
+    <!-- when bag is full -->
+<div class="container" *ngIf="buyProduct.length">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col"></th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">All</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of buyProduct;let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <th scope="row">
+                        <img [src]="product.productObj.image" alt="">
+                    </th>
+                    <td>{{product.productObj.name}}</td>
+                    <td>{{product.productObj.price}}</td>
+                    <td>
+                        <form><input type="number" class="form-control" [(ngModel)]="product.quantity"
+                                name="product.quantity" (change)="changeQt(i)"></form>
+                    </td>
+                    <td>{{product.productObj.price*product.quantity}}</td>
+                    <td> <button type="button" class="btn btn-danger" (click)="deleteProduct(i)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="card">
+            <div class="card-body all">
+                <h2>All: {{all}}</h2>
+                <button type="button" class="btn btn-success" routerLink="/payment-delivery">Buy!</button>
+            </div>
+        </div>
+    </div>
+</div>

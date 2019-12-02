@@ -23,6 +23,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ShopCartComponent } from './pages/shop-cart/shop-cart.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     AdminProductComponent,
     AdminCommentsComponent,
     AdminUsersComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ShopCartComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

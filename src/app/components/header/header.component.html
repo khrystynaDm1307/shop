@@ -14,14 +14,20 @@
                 <a class="nav-link" routerLink='sign-in' *ngIf="!authService.isLoggedIn()">Sign In</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink='sign-up' *ngIf="authService.isLoggedIn()" (click)="authService.SignOut()">Sign Out</a>
+                <a class="nav-link" routerLink='sign-up' *ngIf="authService.isLoggedIn()"
+                    (click)="authService.SignOut()">Sign Out</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink='sign-up' *ngIf="!authService.isLoggedIn()">Sign Up</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" routerLink='admin' *ngIf="authService.isLoggedIn()">Admin</a>
-                </li>
+                <a class="nav-link" routerLink='admin' *ngIf="authService.isLoggedIn()">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='shopping-cart' *ngIf="authService.isLoggedIn()">
+                    <div class="icon"></div>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

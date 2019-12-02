@@ -1,19 +1,35 @@
-<div class="container">
-        <div class="details" >
-          <div class="forImg">
-              <img [src]="view?.image" class="card-img-top" alt="...">
-          </div>
-          
-          <div class="body">
-            <h1 class="card-title">{{view?.name}}</h1>
-            <div class="desc">
-                <p class="card-text">{{view?.description}}</p>
-            </div>
-           
-            <h2 class="card-text">{{view?.price}} грн</h2>
-            <!-- <a class="btn btn-primary">back</a> -->
-            <!-- <a [routerLink]="[ '/pizza']" class="btn btn-primary">back</a> -->
-            <a (click)="goBack()" class="btn btn-danger">Back</a>
-          </div>
-        </div>
+<div class="box ">
+  <div class="details">
+    <img [src]="view?.image" alt="...">
+    <div class="body">
+      <h1 class="card-title">{{view?.name}}</h1>
+      <div class="desc">
+        <p class="card-text">{{view?.description}}</p>
       </div>
+      <h2 class="card-text">{{view?.price}} грн</h2>
+      <!-- <a class="btn btn-primary">back</a> -->
+      <!-- <a [routerLink]="[ '/pizza']" class="btn btn-primary">back</a> -->
+      <button type="button" class="btn btn-primary" (click)="addToBag(view)">Buy</button>
+      <a (click)="goBack()" class="btn btn-primary">Back</a>
+    </div>
+  </div>
+</div>
+<div class="box">
+  <div class="details2">
+    <h1>Comments</h1>
+    <form action="" *ngIf="isBought">
+        <label for="">{{user.displayName}}</label>
+        <textarea name="" id="" cols="60" rows="4" class="form-control"></textarea>
+        <button type="button" class="btn btn-success">Add</button>
+      </form>
+    <h1 *ngIf="!isBought">You can add comment only after buying! :)</h1>
+    <div class="comment">
+      <hr>
+      <p class="name">ht@gmail.com</p><span>21 november,15:00</span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt, iure corporis dolor illo omnis
+        eius explicabo, velit natus possimus doloremque vero!</p>
+    </div>
+  </div>
+
+
+</div>

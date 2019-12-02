@@ -9,6 +9,7 @@ import { IProduct } from 'src/app/shared/interface/product.model';
 })
 export class ProductsService {
   url: string;
+  sum: number;
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:3000/products';
   }
@@ -26,11 +27,23 @@ export class ProductsService {
   }
 
   public editProduct(obj: IProduct): Observable<Array<IProduct>> {
-    console.log(obj.id);
-    
     return this.http.put<Array<IProduct>>(`${this.url}/${obj.id}`, obj);
   }
+
   public getOneProduct(id: number): Observable<IProduct> {
     return this.http.get<IProduct>(`${this.url}/${id}`);
+  }
+
+  public updateLocalStorage(products: Array<any>): void {
+    localStorage.removeItem('products');
+    localStorage.setItem(`products`, JSON.stringify(products));
+  }
+
+  public setSum(cost: number): void {
+    this.sum = cost;
+  }
+
+  public getSum(): number {
+    return this.sum;
   }
 }

@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { IUserInside } from '../interface/IUserInside';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,10 @@ export class AuthService {
       })
   }
 
+  getUser(){
+    const user=JSON.parse(localStorage.getItem('user'));
+    return user;
+  }
   // Sign up with email/password
   SignUp(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
@@ -54,12 +59,12 @@ export class AuthService {
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+       window.alert(error.message)
       })
   }
 
   // Returns true when user is looged in and email is verified
-   isLoggedIn(): boolean {
+  isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null) ? true : false;
   }
@@ -96,8 +101,10 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      purchase:[]
     }
+ 
     return userRef.set(userData, {
       merge: true
     })
@@ -111,7 +118,10 @@ export class AuthService {
     })
   }
 
-  
+  public getOneUser(id: string) {
+    return this.afs.collection('users').doc(id).snapshotChanges();
+  }
+
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
     return this.afAuth.auth.currentUser.sendEmailVerification()

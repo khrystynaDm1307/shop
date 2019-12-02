@@ -1,0 +1,32 @@
+.box{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('https://storeinteriors.ru/wp-content/uploads/salon-i-love-ugly-02.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding-bottom: 2rem;
+}
+.card{
+    color: black;
+}
+table{
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.658);
+    font-weight: bold;
+}
+img{
+    width: 200px
+}
+.card:nth-of-type(1){
+    width: 100%;
+    text-align:center;
+    background-color: rgba(255, 255, 255, 0.658)!important;
+    font-weight: bold;
+}
+.btn-success{
+    width: 200px;
+}

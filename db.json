@@ -28,7 +28,12 @@
       "comments": []
     },
     {
-      "id": 3,
+      "id": 1,
+      "category": "Woman",
+      "name": "Jeans",
+      "description": "text",
+      "price": 1800,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F7y8h3zp9p5i?alt=media&token=bdf6c162-c82d-4f97-99ce-9f1730a237df",
       "rating": 0,
       "comments": []
     }

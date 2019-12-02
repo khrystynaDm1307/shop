@@ -10,6 +10,8 @@ import { AdminProductComponent } from './admin/admin-product/admin-product.compo
 import { AdminCommentsComponent } from './admin/admin-comments/admin-comments.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ShopCartComponent } from './pages/shop-cart/shop-cart.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: 'sign-up', component: SignUpComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'main', component: MainComponent},
+  {path: 'shopping-cart', component: ShopCartComponent},
+  {path: 'payment-delivery', component: PaymentComponent},
   {path: 'admin', component: AdminComponent, children: [
     {path: '', redirectTo: 'products', pathMatch: 'full'},
     {path: 'products', component: AdminProductComponent},
