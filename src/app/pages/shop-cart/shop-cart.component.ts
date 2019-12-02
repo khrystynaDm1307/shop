@@ -40,6 +40,6 @@ export class ShopCartComponent implements OnInit {
     this.buyProduct.forEach(el => {
       this.all += el.quantity * el.productObj.price;
     });
-    this.productsService.setSum(this.all)
+    this.productsService.setCard(this.all,this.buyProduct)
   }
 }

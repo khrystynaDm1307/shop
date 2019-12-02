@@ -9,7 +9,10 @@ import { IProduct } from 'src/app/shared/interface/product.model';
 })
 export class ProductsService {
   url: string;
-  sum: number;
+  card: any = {
+    arrayProd: [],
+    all: 0
+  };
   constructor(private http: HttpClient) {
     this.url = 'http://localhost:3000/products';
   }
@@ -39,11 +42,12 @@ export class ProductsService {
     localStorage.setItem(`products`, JSON.stringify(products));
   }
 
-  public setSum(cost: number): void {
-    this.sum = cost;
+  public setCard(cost: number, array: Array<any>): void {
+    this.card.arrayProd = array;
+    this.card.all = cost;
   }
 
-  public getSum(): number {
-    return this.sum;
+  public getCard(): any {
+    return this.card;
   }
 }

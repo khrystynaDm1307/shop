@@ -38,7 +38,7 @@ export class ProductDetailsComponent implements OnInit {
     if (localStorage.getItem('products') !== null) {
       this.productsToBuy = JSON.parse(localStorage.getItem('products'));
     }
-    const object = {productObj: product,quantity: 1}
+    const object = { productObj: product, quantity: 1 }
     let n = false; // is this object already in the shopping bag?
     if (this.productsToBuy.length > 0) {
       this.productsToBuy.forEach((el, index) => {
@@ -70,18 +70,23 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   public isProductBought(): void {
-    const id = JSON.parse(localStorage.getItem('user')).uid;
-    this.authService.getOneUser(id).subscribe(
-      data => {
-        this.user = data.payload.data();
-        if (this.user.purchase.some(element => element.id === this.productId)) {
-          this.isBought = true;
-        } else {
-          this.isBought = false;
+    if (localStorage.getItem('user') !== "null") {
+      const id = JSON.parse(localStorage.getItem('user')).uid;
+      this.authService.getOneUser(id).subscribe(
+        data => {
+          this.user = data.payload.data();
+          if (this.user.purchase.some(element => element.id === this.productId)) {
+            this.isBought = true;
+          } else {
+            this.isBought = false;
+          }
+          if (this.user.displayName === null) { this.user.displayName = this.user.email; }
         }
-        if (this.user.displayName === null) { this.user.displayName = this.user.email; }
-      }
-    );
+      );
+    }
+    else {
+      this.isBought = false;
+    }
   }
 
   public goBack(): void {
