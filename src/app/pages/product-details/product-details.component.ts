@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { User } from 'src/app/shared/interface/user.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { IUserInside } from 'src/app/shared/interface/IUserInside';
+import { Comments } from 'src/app/shared/class/product.class';
 
 @Component({
   selector: 'app-product-details',
@@ -20,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   isBought: boolean;
   UserService: any;
   productsToBuy: Array<any> = []
+  textComment: string;
 
   constructor(
     private productService: ProductsService,
@@ -89,7 +91,31 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
+  public addComment(): void {
+    const now = new Date();
+    const comment = new Comments(1, this.user.displayName, this.textComment, `${now.getDay()}.${now.getMonth()}.${now.getFullYear()}`);
+    if (this.view.comments.length > 0) {
+      comment.id = this.view.comments.slice(-1)[0].id + 1;
+    }
+    this.view.comments.unshift(comment);
+    this.edit();
+    this.textComment = '';
+  }
+
+  public deleteComment(i:number):void{
+    this.view.comments.splice(i,1)
+    this.edit();
+  }
+
+  public edit(): void {
+    this.productService.editProduct(this.view).subscribe(
+      () => {
+        this.getMoreDetails();
+      }
+    );
+  }
   public goBack(): void {
     this.location.back();
   }
+
 }

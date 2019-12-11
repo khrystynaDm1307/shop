@@ -14,7 +14,7 @@ export class Product implements IProduct {
     ) { }
 }
 
-export class Comment implements IComment {
+export class Comments implements IComment {
     constructor(
         public id: number,
         public user: string,

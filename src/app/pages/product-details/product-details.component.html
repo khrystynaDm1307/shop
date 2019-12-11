@@ -20,15 +20,15 @@
     <h1>Comments</h1>
     <form action="" *ngIf="isBought">
         <label for="">{{user.displayName}}</label>
-        <textarea name="" id="" cols="60" rows="4" class="form-control"></textarea>
-        <button type="button" class="btn btn-success">Add</button>
+        <textarea name="" id="" cols="60" rows="4" class="form-control" [(ngModel)]="textComment" name="textComment"></textarea>
+        <button type="button" class="btn btn-success" (click)="addComment()">Add</button>
       </form>
     <h1 *ngIf="!isBought">You can add comment only after buying! :)</h1>
-    <div class="comment">
+    <div class="comment" *ngFor="let comment of view.comments;let i=index">
       <hr>
-      <p class="name">ht@gmail.com</p><span>21 november,15:00</span>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deserunt, iure corporis dolor illo omnis
-        eius explicabo, velit natus possimus doloremque vero!</p>
+      <p class="name">{{comment.user}}</p><span>{{comment.data}}</span>
+      <p>{{comment.text}}</p>
+      <button type="button" class="btn btn-danger" (click)="deleteComment(i)" *ngIf="comment.user===user.displayName">Delete</button>
     </div>
   </div>
 
