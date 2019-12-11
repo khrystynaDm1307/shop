@@ -31,7 +31,7 @@
                     <td>{{product.productObj.price}}</td>
                     <td>
                         <form><input type="number" class="form-control" [(ngModel)]="product.quantity"
-                                name="product.quantity" (change)="changeQt(i)"></form>
+                                name="product.quantity" (change)="changeQt(product)"></form>
                     </td>
                     <td>{{product.productObj.price*product.quantity}}</td>
                     <td> <button type="button" class="btn btn-danger" (click)="deleteProduct(i)">Delete</button></td>
@@ -41,7 +41,7 @@
         <div class="card">
             <div class="card-body all">
                 <h2>All: {{all}}</h2>
-                <button type="button" class="btn btn-success" routerLink="/payment-delivery">Buy!</button>
+                <button type="button" class="btn btn-success"  (click)="check()">Buy!</button>
             </div>
         </div>
     </div>

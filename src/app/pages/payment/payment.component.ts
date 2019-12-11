@@ -42,7 +42,7 @@ export class PaymentComponent implements OnInit {
   }
   public buy() {
     this.card.arrayProd.forEach(element => {
-     element.productObj.quantity-=element.quantity
+     element.productObj.quantity=element.productObj.quantity-element.quantity
      console.log();
      
      this.productsService.editProduct(element.productObj).subscribe(
@@ -53,7 +53,7 @@ export class PaymentComponent implements OnInit {
       this.user.purchase.unshift(element.productObj)
     });
     this.firestore.doc('users/' + this.user.uid).update(this.user);
- 
+    localStorage.removeItem('products')
   }
 
 
