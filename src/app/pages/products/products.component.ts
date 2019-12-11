@@ -20,6 +20,7 @@ export class ProductsComponent implements OnInit {
     this.productsService.getProducts().subscribe(
       data => {
         this.products = data;
+        this.products = this.products.filter(el => el.quantity > 0)
       },
       err => { console.log(err); }
     );

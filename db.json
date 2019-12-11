@@ -18,24 +18,37 @@
   },
   "products": [
     {
-      "id": 0,
-      "category": "woman",
-      "name": "sweat",
-      "description": "black",
-      "price": 1200,
-      "image": "https://i.pinimg.com/originals/fb/b6/cd/fbb6cd9ca75aa63f62ec8e8e8bb95105.jpg",
+      "id": 1,
+      "category": "Man",
+      "name": "Jeans",
+      "description": "Beautifull black jeans",
+      "price": 1690,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fxmto1t4491c?alt=media&token=2ac72ea4-e137-4d5b-8986-338c84fb7536",
       "rating": 0,
-      "comments": []
+      "comments": [],
+      "quantity": 5
     },
     {
-      "id": 1,
-      "category": "Woman",
-      "name": "Jeans",
-      "description": "text",
-      "price": 1800,
-      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F7y8h3zp9p5i?alt=media&token=bdf6c162-c82d-4f97-99ce-9f1730a237df",
+      "id": 2,
+      "category": "Man",
+      "name": "Jacket",
+      "description": "Beautifull winter brown jacket",
+      "price": 2300,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F3pg5ivovy5?alt=media&token=86ba1751-72d7-4674-b466-c497edc8c937",
       "rating": 0,
-      "comments": []
+      "comments": [],
+      "quantity": 4
+    },
+    {
+      "id": 3,
+      "category": "Man",
+      "name": "T-shirt",
+      "description": "Beautifull black t-shirt",
+      "price": 990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F4e6cd4u2h3s?alt=media&token=9722427e-25a5-4b29-ae83-56df5a3542b1",
+      "rating": 0,
+      "comments": [],
+      "quantity": 6
     }
   ]
 }

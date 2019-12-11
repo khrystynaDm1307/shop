@@ -6,7 +6,8 @@ export interface IProduct {
     price: number;
     image: string;
     rating: number;
-    comments: Array<IComment>
+    comments: Array<IComment>;
+    quantity:number;
 }
 
 export interface IComment {

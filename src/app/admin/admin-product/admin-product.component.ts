@@ -19,6 +19,7 @@ export class AdminProductComponent implements OnInit {
   productDescription: string;
   productPrice: number;
   productImage: string;
+  productQuantity: number;
 
   editId: number;
   editStatus: boolean = false;
@@ -47,27 +48,52 @@ export class AdminProductComponent implements OnInit {
   }
 
   public addProduct(): void {
-    const newProd = new Product(1,
+    let newProd = new Product(1,
       this.productCategory,
       this.productName,
       this.productDescription,
       this.productPrice,
       this.productImage,
       0,
-      []);
+      [],
+      this.productQuantity);
+    let n = false;
     if (this.products.length > 0) {
-      newProd.id = this.products.slice(-1)[0].id + 1;
-    }
-    this.productsService.postProducts(newProd).subscribe(
-      () => {
-        this.getProdData();
+      // tslint:disable-next-line: prefer-for-of
+      for (let index = 0; index < this.products.length; index++) {
+        if (this.products[index].name === this.productName) {
+          n = true;
+          this.products[index].quantity += this.productQuantity;
+          this.productsService.editProduct(this.products[index]).subscribe(
+            () => {
+              this.getProdData();
+            }
+          );
+          break;
+        }
       }
-    );
+      if(n===false){
+        newProd.id = this.products.slice(-1)[0].id + 1;
+        this.productsService.postProducts(newProd).subscribe(
+          () => {
+            this.getProdData();
+          }
+        );
+      }
+    }
+    else{
+      this.productsService.postProducts(newProd).subscribe(
+        () => {
+          this.getProdData();
+        }
+      );
+    }
     this.productName = '';
     this.productCategory = null;
     this.productDescription = '';
     this.productPrice = 0;
     this.productImage = null;
+    this.productQuantity = 0;
   }
 
   public upload(event): void {
@@ -98,16 +124,17 @@ export class AdminProductComponent implements OnInit {
     this.productDescription = obj.description;
     this.productPrice = obj.price;
     this.productImage = obj.image;
+    this.productQuantity = obj.quantity;
     this.editStatus = true;
-    this.editId=obj.id
+    this.editId = obj.id
   }
 
   public saveEditProduct(): void {
     // tslint:disable-next-line: max-line-length
-    const editProd = new Product(this.editId, this.productCategory, this.productName, this.productDescription, this.productPrice, this.productImage, 0, []);
+    const editProd = new Product(this.editId, this.productCategory, this.productName, this.productDescription, this.productPrice, this.productImage, 0, [], this.productQuantity);
     console.log(editProd);
     console.log(this.editId);
-    
+
     this.productsService.editProduct(editProd).subscribe(
       () => {
         this.getProdData();
@@ -118,6 +145,7 @@ export class AdminProductComponent implements OnInit {
     this.productDescription = '';
     this.productPrice = 0;
     this.productImage = '';
+    this.productQuantity = 0;
     this.editStatus = false;
   }
 
