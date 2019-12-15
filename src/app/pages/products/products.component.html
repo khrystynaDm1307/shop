@@ -8,6 +8,21 @@
             <option>Спочатку з вищим рейтингом</option>
             <option>Спочатку нові</option>
         </select>
+        <label for="">Filter</label>
+        <select class="form-control" [(ngModel)]="priceFilter" name="priceFilter" (change)="priceF(priceFilter,catFilter)">
+            <option value="" disabled >Price</option>
+            <option>менше 1000</option>
+            <option>від 1000 до 2000</option>
+            <option>2000+</option>
+            <option>усі</option>
+        </select>
+        <select class="form-control" [(ngModel)]="catFilter" name="catFilter" (change)="priceF(priceFilter,catFilter)">
+                <option value="" disabled>Gender</option>
+                <option>чоловіки</option>
+                <option>жінки</option>
+                <option>діти</option>
+                <option>усі</option>
+            </select>
     </div>
     <div class="container">
         <div *ngFor="let prod of products" class="card mt-2" style="width: 18rem;">
