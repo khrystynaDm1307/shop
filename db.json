@@ -19,49 +19,111 @@
   "products": [
     {
       "id": 1,
-      "category": "Man",
-      "name": "Jeans",
-      "description": "Beautifull black jeans",
-      "price": 1690,
-      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fxmto1t4491c?alt=media&token=2ac72ea4-e137-4d5b-8986-338c84fb7536",
-      "rating": 0,
-      "comments": [
-        {
-          "id": 3,
-          "user": "Христя Демчина",
-          "text": "wow!!!",
-          "data": "3.11.2019"
-        },
-        {
-          "id": 2,
-          "user": "Марко Манько",
-          "text": "super!!!",
-          "data": "3.11.2019"
-        }
-      ],
-      "quantity": 1
+      "category": "Woman",
+      "name": "Блуза",
+      "description": "Блузка из коллекции Answear. Модель выполнена из гладкой ткани. Имеет воротничёк.\n\n- Прямой фасон.\n- Рукава со стяжкой.\n- Модель со стойкой.\n- Сзади имеется молния.\n- Тонкая неэластичная ткань.\n- Длина рукава (от воротничка): 66 см.\n- Длина: 56 см.\n- Ширина подмышками: 51 см.\n- Параметры указаны для размера: S.\n\nУзор: однотонные\nРукав: длинный\nДекольте: со стойкой\nСостав:\nОсновной материал: 100% Полиэстер\n\nID товара: -90-BDD02K\nКод производителя: DERM5.JT",
+      "price": 990,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fcnzmgin12sf?alt=media&token=890702e8-eeae-44c6-a382-59b5d3649725",
+      "rating": [],
+      "comments": [],
+      "quantity": 7,
+      "commentsStatus": true
     },
     {
       "id": 2,
-      "category": "Man",
-      "name": "Jacket",
-      "description": "Beautifull winter brown jacket",
-      "price": 2300,
-      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F3pg5ivovy5?alt=media&token=86ba1751-72d7-4674-b466-c497edc8c937",
-      "rating": 0,
+      "category": "Woman",
+      "name": "Сукня",
+      "description": "Пальто из коллекции Answear. Неутепленая модель выполнена из имитации шерсти.\n\n- Модель без утепления с подкладкой.\n- Свободная модель.\n- Прорезные карманы.\n- Застегивается на пуговицы.\n- Ширина подмышками: 58 см.\n- Ширина в плечах: 44 см.\n- Длина рукава: 62 см.\n- Длина: 95 см.\n- Параметры указаны для размера: S.\n\nПодкладка: с подкладкой\nКапюшон: без капюшона\nФасон: oversize\nУтепление: без утепления\nМатериал: имитация меха\nСостав:\n100% Полиэстер\n\nID товара: -90-KPD00G\nКод производителя: WA19.KPD00G",
+      "price": 1800,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fgss8qcb11ec?alt=media&token=cd7b2e69-4b94-499a-b6c1-c5c389be2bb7",
+      "rating": [],
       "comments": [],
-      "quantity": 4
+      "quantity": 5,
+      "commentsStatus": true
     },
     {
       "id": 3,
-      "category": "Man",
-      "name": "T-shirt",
-      "description": "Beautifull black t-shirt",
-      "price": 990,
-      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F4e6cd4u2h3s?alt=media&token=9722427e-25a5-4b29-ae83-56df5a3542b1",
-      "rating": 0,
+      "category": "Woman",
+      "name": "Пальто",
+      "description": "Пальто из коллекции Answear. Неутепленая модель выполнена из имитации шерсти.\n\n- Модель без утепления с подкладкой.\n- Свободная модель.\n- Прорезные карманы.\n- Застегивается на пуговицы.\n- Ширина подмышками: 58 см.\n- Ширина в плечах: 44 см.\n- Длина рукава: 62 см.\n- Длина: 95 см.\n- Параметры указаны для размера: S.\n\nПодкладка: с подкладкой\nКапюшон: без капюшона\nФасон: oversize\nУтепление: без утепления\nМатериал: имитация меха\nСостав:\n100% Полиэстер\n\nID товара: -90-KPD00G\nКод производителя: WA19.KPD00G",
+      "price": 2600,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Feemtnu66iyt?alt=media&token=1ac3e416-8609-4caa-a646-23fb00b95eb0",
+      "rating": [],
       "comments": [],
-      "quantity": 6
+      "quantity": 3,
+      "commentsStatus": true
+    },
+    {
+      "id": 4,
+      "category": "Man",
+      "name": "Кофта",
+      "description": "Кофта с капюшоном из коллекции Levi's. Модель выполнена из трикотажа с принтом.\n\nСогласно политике охраны товарных знаков примерно 10% ассортимента бренда Levi's имеют \"пустой ярлык\" (красного цвета без логотипа бренда, исключительно с международным знаком торговой марки). \"Пустой ярлык\" - это зарегистрированный товарный знак бренда Levi's и модель, имеющая данный ярлык, является полноценным оригинальным продуктом. В случаях неуверенности, просим связаться с нашим call-centre.\n\n- Свободный фасон.\n- Заниженная линия плеч.\n- Прорезной карман.\n- Модель с капюшоном.\n- Тонкий, эластичный трикотаж.\n- Модель с принтом.\n- Отделка в виде стяжки.\n- Ширина подмышками: 61,5 см.\n- Длина рукава (от капюшона): 82,5 см.\n- Длина: 73 см.\n- Параметры указаны для размера: M.\n\nУзор: принт\nКапюшон: с капюшоном\nСостав:\n90% Хлопок, 10% Полиэстер\n\nID товара: 4910-BLM0P7\nКод производителя: 72632.0031",
+      "price": 1300,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F3406ue52vmh?alt=media&token=5bbf2c18-b731-4690-8e7a-ec92daa8f986",
+      "rating": [],
+      "comments": [],
+      "quantity": 6,
+      "commentsStatus": true
+    },
+    {
+      "id": 5,
+      "category": "Man",
+      "name": "Вітрівка",
+      "description": "Кофта с капюшоном из коллекции Medicine. Модель с застежкой на молнию выполнена из гладкого трикотажа.\n\n- Прямой фасон.\n- Застегивается на молнию.\n- Прорезные карманы.\n- Модель с капюшоном.\n- Рукава со стяжкой.\n- Нижний край на резинке.\n- Ширина подмышками: 59 см.\n- Длина рукава: 65 см.\n- Длина: 73 см.\n- Параметры указаны для размера: M.\n\nУзор: однотонные\nМатериал: хлопок\nКапюшон: с капюшоном\nСостав:\n100% Хлопок\n\nID товара: 6910-BLM302\nКод производителя: RW19.BLM302",
+      "price": 450,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fpkt1vph39x8?alt=media&token=8426d7a5-6ecf-46a1-a4bc-c219aed2b309",
+      "rating": [],
+      "comments": [],
+      "quantity": 10,
+      "commentsStatus": true
+    },
+    {
+      "id": 6,
+      "category": "Man",
+      "name": "КОФТА BASIC",
+      "description": "Кофта с капюшоном из коллекции Medicine. Модель с застежкой на молнию выполнена из гладкого трикотажа.\n\n- Прямой фасон.\n- Отделка в виде стяжки.\n- Застегивается на молнию.\n- Капюшон со стяжкой.\n- Прорезные карманы.\n- Гладкий трикотаж.\n- Длина рукава: 69 см.\n- Длина: 71 см.\n- Ширина подмышками: 49 см.\n- Параметры указаны для размера: M.\n\nУзор: однотонные\nМатериал: хлопок\nКапюшон: с капюшоном\nСостав:\n100% Хлопок\n\nID товара: 6910-BLM050\nКод производителя: RW19.BLM050",
+      "price": 780,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fbtt17ud5n1j?alt=media&token=1da67e57-924a-49c8-be66-820ac96651d1",
+      "rating": [],
+      "comments": [],
+      "quantity": 4,
+      "commentsStatus": true
+    },
+    {
+      "id": 7,
+      "category": "Chilldren",
+      "name": "Дитяча сукня",
+      "description": "Детское платье из коллекции Mayoral. Расклешенная модель выполнена из денима.\n\n- Расклешенный фасон.\n- Модель с воротником.\n- Застегивается на пуговицы.\n- Завязка на талии.\n- Струящаяся модель.\n\nУзор: однотонные\nРукав: длинный\nМатериал: джинс\nДекольте: с воротником\nФасон: клёш\nСостав:\n100% Хлопок\n\nID товара: 4910-SUG02C\nКод производителя: 7935.8F.junior",
+      "price": 600,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fz7fk0vzb4vn?alt=media&token=31953362-8675-429b-9c9b-e99e76a774ea",
+      "rating": [],
+      "comments": [],
+      "quantity": 7,
+      "commentsStatus": true
+    },
+    {
+      "id": 8,
+      "category": "Chilldren",
+      "name": "Дитяча куртка",
+      "description": "Детская кофта с капюшоном из коллекции Mayoral. Модель выполнена из трикотажа с апликацией.\n\n- Прямой фасон.\n- Внутренний карман с застежкой на пуговице.\n- Модель с капюшоном.\n- Модель с аппликацией.\n- Отделка в виде стяжки.\n\nУзор: аппликация\nМатериал: с эластаном\nКапюшон: с капюшоном\nСостав:\n99% Хлопок, 1% Эластан\n\nID товара: 4910-BLB01E\nКод производителя: 4433.5G.mini",
+      "price": 1100,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2Fn4et2i0wgy?alt=media&token=32d209a9-36b5-4c7f-b278-e5c60e08cf84",
+      "rating": [],
+      "comments": [],
+      "quantity": 9,
+      "commentsStatus": true
+    },
+    {
+      "id": 9,
+      "category": "Chilldren",
+      "name": "Дитяче плаття",
+      "description": "Детское платье из коллекции Mayoral. Расклешенная модель выполнена из денима.\n\n- Расклешенный фасон.\n- Модель с воротником.\n- Застегивается на пуговицы.\n- Завязка на талии.\n- Струящаяся модель.\n\nУзор: однотонные\nРукав: длинный\nМатериал: джинс\nДекольте: с воротником\nФасон: клёш\nСостав:\n100% Хлопок\n\nID товара: 4910-SUG02C\nКод производителя: 7935.8F.junior",
+      "price": 2300,
+      "image": "https://firebasestorage.googleapis.com/v0/b/shop-5a9d3.appspot.com/o/images%2F41iv8hoqc5t?alt=media&token=94c4cf9a-78ce-43e1-9c0c-1c5147607d58",
+      "rating": [],
+      "comments": [],
+      "quantity": 2,
+      "commentsStatus": true
     }
   ]
 }

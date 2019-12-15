@@ -1,4 +1,14 @@
 <div class="box">
+    <div class="form-group">
+        <label for="">Sort</label>
+        <select class="form-control" [(ngModel)]="sort" name="sort" (change)="sortF(sort)">
+            <!-- <option value="" disabled>Choose category</option> -->
+            <option>Спочатку дорожчі</option>
+            <option>Спочатку дешевші</option>
+            <option>Спочатку з вищим рейтингом</option>
+            <option>Спочатку нові</option>
+        </select>
+    </div>
     <div class="container">
         <div *ngFor="let prod of products" class="card mt-2" style="width: 18rem;">
             <img [src]="prod.image" class="card-img-top" alt="...">

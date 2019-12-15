@@ -5,9 +5,10 @@ export interface IProduct {
     description: string;
     price: number;
     image: string;
-    rating: number;
+    rating: Array<number>;
     comments: Array<IComment>;
     quantity:number;
+    commentsStatus:boolean;
 }
 
 export interface IComment {

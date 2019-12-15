@@ -102,7 +102,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
-      purchase:[]
+      purchase:user.purchase
     }
  
     return userRef.set(userData, {

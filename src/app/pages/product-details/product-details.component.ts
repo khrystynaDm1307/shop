@@ -22,6 +22,8 @@ export class ProductDetailsComponent implements OnInit {
   UserService: any;
   productsToBuy: Array<any> = []
   textComment: string;
+  rateNumber: number;
+  rating:string;
 
   constructor(
     private productService: ProductsService,
@@ -34,7 +36,10 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.getMoreDetails()
+    this.isProductBought()
+  }
 
   public addToBag(product: IProduct): void {
     if (localStorage.getItem('products') !== null) {
@@ -67,6 +72,7 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getOneProduct(this.productId).subscribe(
       data => {
         this.view = data;
+        this.rating =(this.view.rating.reduce((a, b) => (a + b)) / this.view.rating.length).toFixed(1);
       }
     )
   }
@@ -98,12 +104,23 @@ export class ProductDetailsComponent implements OnInit {
       comment.id = this.view.comments.slice(-1)[0].id + 1;
     }
     this.view.comments.unshift(comment);
+    this.view.rating.unshift(this.rateNumber);
+    console.log(this.view.rating);
+    this.rating =(this.view.rating.reduce((a, b) => (a + b)) / this.view.rating.length).toFixed(1)
+    console.log(this.rating);
+    
     this.edit();
     this.textComment = '';
   }
 
-  public deleteComment(i:number):void{
-    this.view.comments.splice(i,1)
+  changeQt() {
+    if (this.rateNumber < 0 || this.rateNumber > 5) {
+      this.rateNumber = 0;
+    }
+  }
+
+  public deleteComment(i: number): void {
+    this.view.comments.splice(i, 1)
     this.edit();
   }
 

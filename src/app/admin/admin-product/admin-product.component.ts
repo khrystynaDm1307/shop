@@ -21,8 +21,9 @@ export class AdminProductComponent implements OnInit {
   productImage: string;
   productQuantity: number;
 
-  editId: number;
+  editObj:IProduct;
   editStatus: boolean = false;
+
 
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
@@ -54,9 +55,10 @@ export class AdminProductComponent implements OnInit {
       this.productDescription,
       this.productPrice,
       this.productImage,
-      0,
       [],
-      this.productQuantity);
+      [],
+      this.productQuantity,
+      true);
     let n = false;
     if (this.products.length > 0) {
       // tslint:disable-next-line: prefer-for-of
@@ -72,7 +74,7 @@ export class AdminProductComponent implements OnInit {
           break;
         }
       }
-      if(n===false){
+      if (n === false) {
         newProd.id = this.products.slice(-1)[0].id + 1;
         this.productsService.postProducts(newProd).subscribe(
           () => {
@@ -81,7 +83,7 @@ export class AdminProductComponent implements OnInit {
         );
       }
     }
-    else{
+    else {
       this.productsService.postProducts(newProd).subscribe(
         () => {
           this.getProdData();
@@ -119,6 +121,7 @@ export class AdminProductComponent implements OnInit {
   }
 
   public editProduct(obj: IProduct): void {
+    this.editObj=obj;
     this.productName = obj.name;
     this.productCategory = obj.category;
     this.productDescription = obj.description;
@@ -126,15 +129,12 @@ export class AdminProductComponent implements OnInit {
     this.productImage = obj.image;
     this.productQuantity = obj.quantity;
     this.editStatus = true;
-    this.editId = obj.id
+
   }
 
   public saveEditProduct(): void {
     // tslint:disable-next-line: max-line-length
-    const editProd = new Product(this.editId, this.productCategory, this.productName, this.productDescription, this.productPrice, this.productImage, 0, [], this.productQuantity);
-    console.log(editProd);
-    console.log(this.editId);
-
+    const editProd = new Product(this.editObj.id, this.productCategory, this.productName, this.productDescription, this.productPrice, this.productImage, this.editObj.rating,this.editObj.comments, this.productQuantity, this.editObj.commentsStatus);
     this.productsService.editProduct(editProd).subscribe(
       () => {
         this.getProdData();

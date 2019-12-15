@@ -4,7 +4,8 @@
     <div class="body">
       <h1 class="card-title">{{view?.name}}</h1>
       <div class="desc">
-        <p class="card-text">{{view?.description}}</p>
+        <p class="card-text ">{{view?.description}}</p>
+        <p class="card-text" >Rating: {{rating}}</p>
       </div>
       <h2 class="card-text">{{view?.price}} грн</h2>
       <h2 class="card-text">{{view?.quantity}} шт</h2>
@@ -15,12 +16,14 @@
     </div>
   </div>
 </div>
-<div class="box">
+<div class="box" *ngIf="view.commentsStatus">
   <div class="details2">
     <h1>Comments</h1>
     <form action="" *ngIf="isBought">
         <label for="">{{user.displayName}}</label>
         <textarea name="" id="" cols="60" rows="4" class="form-control" [(ngModel)]="textComment" name="textComment"></textarea>
+        <p>Rating:</p>
+        <input type="number"  [(ngModel)]="rateNumber" name="rateNumber" class="form-control" (change)="changeQt()">
         <button type="button" class="btn btn-success" (click)="addComment()">Add</button>
       </form>
     <h1 *ngIf="!isBought">You can add comment only after buying! :)</h1>

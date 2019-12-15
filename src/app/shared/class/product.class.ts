@@ -8,9 +8,10 @@ export class Product implements IProduct {
         public description: string,
         public price: number,
         public image: string,
-        public rating: number,
+        public rating: Array<number>,
         public comments: Array<IComment>,
-        public quantity:number
+        public quantity:number,
+        public commentsStatus:boolean
     ) { }
 }
 
