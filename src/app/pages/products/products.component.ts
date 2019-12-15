@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   sort: string;
   priceFilter: string;
   catFilter: string;
-
+new: Array<IProduct> = []
   constructor(private productsService: ProductsService) {
     this.getProdData();
   }
@@ -29,9 +29,6 @@ export class ProductsComponent implements OnInit {
   }
 
   sortF(sort: string): void {
-    if (this.catFilter === undefined) {
-      this.products = this.zapas;
-    }
     if (sort === 'Спочатку дорожчі') {
       this.products = this.products.sort((a, b) => b.price - a.price)
     }
@@ -45,8 +42,8 @@ export class ProductsComponent implements OnInit {
         return bRate - aRate;
       })
     }
-    if (sort === 'Спочатку нові') {
-      this.products = this.zapas.reverse();
+    if (sort === '-') {
+      this.products = this.zapas;
     }
   }
 
